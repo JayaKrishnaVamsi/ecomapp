@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db_pay:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3369:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
+      - "MYSQL_USER=${DB_USER}"
+      - "MYSQL_PASSWORD=${DB_PASSWORD}"
+      - "MYSQL_DATABASE=${DB_NAME}"
+  web_pay:
+    build: .
+    ports:
+      - "8003:8003"
+    volumes:
+      - ".:/app"
+    depends_on:
+      - db_pay
+    links:
+      - "db_pay:database"

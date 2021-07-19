@@ -1,0 +1,97 @@
+version: '3'
+services:
+  db_cart:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3368:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=vamsi4mysql"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD=vamsi4mysql"
+      - "MYSQL_DATABASE=ecom"
+  web_cart:
+    build: ./ecapp_cart
+    ports:
+      - "8002:8002"
+    #volumes:
+    #  - ".:/app"
+    depends_on:
+      - db_cart
+    links:
+      - "db_cart:database"
+  db_cust:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3366:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=vamsi4mysql"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD=vamsi4mysql"
+      - "MYSQL_DATABASE=ecom"
+  web_cust:
+    build: ./ecapp_cust
+    ports:
+      - "8000:8000"
+    #volumes:
+    #  - ".:/app"
+    depends_on:
+      - db_cust
+    links:
+      - "db_cust:database"
+  db_pay:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3369:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=vamsi4mysql"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD=vamsi4mysql"
+      - "MYSQL_DATABASE=ecom"
+  web_pay:
+    build: ./ecapp_payment
+    ports:
+      - "8003:8003"
+    #volumes:
+    #  - ".:/app"
+    depends_on:
+      - db_pay
+    links:
+      - "db_pay:database"
+  db_prod:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3367:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=vamsi4mysql"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD=vamsi4mysql"
+      - "MYSQL_DATABASE=ecom"
+  web_prod:
+    build: ./ecapp_prod
+    ports:
+      - "8001:8001"
+    #volumes:
+    #  - ".:/app"
+    depends_on:
+      - db_prod
+    links:
+      - "db_prod:database"
+  db_detls:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3370:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=vamsi4mysql"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD=vamsi4mysql"
+      - "MYSQL_DATABASE=ecom"
+  web_detls:
+    build: ./ecapp_public
+    ports:
+      - "8004:8004"
+    #volumes:
+    #  - ".:/app"
+    depends_on:
+      - db_detls
+    links:
+      - "db_detls:database"

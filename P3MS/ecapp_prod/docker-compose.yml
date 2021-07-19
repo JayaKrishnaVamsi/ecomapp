@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db_prod:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3367:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
+      - "MYSQL_USER=${DB_USER}"
+      - "MYSQL_PASSWORD=${DB_PASSWORD}"
+      - "MYSQL_DATABASE=${DB_NAME}"
+  web_prod:
+    build: .
+    ports:
+      - "8001:8001"
+    volumes:
+      - ".:/app"
+    depends_on:
+      - db_prod
+    links:
+      - "db_prod:database"

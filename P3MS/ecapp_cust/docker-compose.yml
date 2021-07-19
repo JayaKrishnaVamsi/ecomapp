@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db_cust:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3366:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
+      - "MYSQL_USER=${DB_USER}"
+      - "MYSQL_PASSWORD=${DB_PASSWORD}"
+      - "MYSQL_DATABASE=${DB_NAME}"
+  web_cust:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ".:/app"
+    depends_on:
+      - db_cust
+    links:
+      - "db_cust:database"

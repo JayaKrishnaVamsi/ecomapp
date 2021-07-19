@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db_cart:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3368:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
+      - "MYSQL_USER=${DB_USER}"
+      - "MYSQL_PASSWORD=${DB_PASSWORD}"
+      - "MYSQL_DATABASE=${DB_NAME}"
+  web_cart:
+    build: .
+    ports:
+      - "8002:8002"
+    volumes:
+      - ".:/app"
+    depends_on:
+      - db_cart
+    links:
+      - "db_cart:database"

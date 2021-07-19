@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GameStore</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>PlayIT</h1>      
+    <p>Life is a game, Play it</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img class="navbar-brand" src="https://www.nicepng.com/png/detail/13-139356_free-icons-png-controller-logo.png">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="home.html">Home</a></li>
+        <li class="active"><a href="product.html">Products</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="account.html"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<form action="/buy" method="POST">
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">X box Series X</div>
+        <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/I/61-jjE67uqL._SL1500_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:3000<br>
+          Enter Quantity:<input type="number" class="btn btn-default" name="xbox">
+          <!--<form action="/buy" method="POST">
+            
+           <input type="submit" class="btn btn-default" value="ADD">
+        </form>-->
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">Nintendo Switch</div>
+        <div class="panel-body"><img src="https://cdn.vox-cdn.com/thumbor/6QTbhbmlSyMwl5E8y1aU4x3cTz8=/0x0:2040x1360/1200x800/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/65003327/jbareham_1492_170228_0024.0.0.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:1500<br>
+          
+          Enter Quantity:<input type="number" class="btn btn-default" name="switch">
+           
+        
+      </div>
+    </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">Sony PS5</div>
+        <div class="panel-body"><img src="https://i.gadgets360cdn.com/products/large/sony-ps5-649x800-1592631239.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:2900<br>
+         
+          Enter Quantity:  <input type="number" class="btn btn-default" name="ps5">
+            
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Nintendo 3DS XL</div>
+        <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/I/51FMjaFKYNL.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:1300<br>
+          Enter Quantity:<input type="number" class="btn btn-default" name="3ds">
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">Sameo Wireless Controller</div>
+        <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/I/31EUivZhOZL.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:900<br>
+          Enter Quantity:<input type="number" class="btn btn-default" name="sam">
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">ANT Gaming Headset</div>
+        <div class="panel-body"><img src="https://m.media-amazon.com/images/I/51Dtv9YaaDL._AC_SS450_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:1000<br>
+          Enter Quantity:  <input type="number" class="btn btn-default" name="ant">
+          </div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+<div style="left: 500px;position: relative;bottom: 25px;"><input type="submit" class="btn btn-default" value="ADD TO CART"></div>
+</form>
+<footer class="container-fluid text-center">
+  <p>Online Store Copyright</p>  
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>
+
+</body>
+</html>
